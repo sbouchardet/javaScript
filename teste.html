@@ -1,11 +1,77 @@
 <html>
+	<head>
+		<title>Bar Chart</title>
+		<script src="Chart.js/Chart.js"></script>
+	</head>
+	<body>
+			<canvas id="canvas" height="450" width="600"></canvas>
+</br>
+			<canvas id="canvas2" height="450" width="600"></canvas>
 
-<head>
-  <script type="text/javascript"  src="teste.js">  </script>
-</head>
-<body onclick="t()">
 
-<div id="1"></div>
-</body>
 
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+	var barChartData = {
+		labels : ["January","February","March","April","May","June","July"],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,0.8)",
+				highlightFill: "rgba(220,220,220,0.75)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,0.8)",
+				highlightFill : "rgba(151,187,205,0.75)",
+				highlightStroke : "rgba(151,187,205,1)",
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+			},
+      {
+				fillColor : "rgba(0,0,0,0.5)",
+				strokeColor : "rgba(0,0,0,0.8)",
+				highlightFill : "rgba(0,0,0,0.75)",
+				highlightStroke : "rgba(0,187,205,1)",
+				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+			}
+		]
+
+
+	}
+
+  var doughnutData = [
+      {
+        value: 1,
+        label: "One"
+      },
+      {
+        value: 2,
+        label: "Two"
+      },
+      {
+        value: 3,
+        label: "Three"
+      },
+      {
+        value: 4,
+        label: "Four"
+      },
+      {
+        value: 5,
+        label: "Five"
+      }
+
+    ];
+
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).Bar(barChartData, {responsive : true});
+
+    var ctx2 = document.getElementById("canvas2").getContext("2d");
+    window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+	}
+	</script>
+	</body>
 </html>

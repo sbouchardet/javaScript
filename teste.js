@@ -1,3 +1,3 @@
-function t (){
-document.write("huehue")
+function t (a,b){
+document.write(""+(a+b))
 }
