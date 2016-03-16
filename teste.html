@@ -4,10 +4,12 @@
 		<script src="Chart.js/Chart.js"></script>
 	</head>
 	<body>
-			<canvas id="canvas" height="450" width="600"></canvas>
-</br>
-			<canvas id="canvas2" height="450" width="600"></canvas>
 
+    <table><tr><td>
+			<div><canvas id="canvas" height="450" width="600"></canvas></div>
+</td><td>
+			<div><canvas id="canvas2" height="450" width="600"></canvas></div>
+</td></tr></table>
 
 
 	<script>
@@ -70,7 +72,7 @@
 		window.myBar = new Chart(ctx).Bar(barChartData, {responsive : true});
 
     var ctx2 = document.getElementById("canvas2").getContext("2d");
-    window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+    window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData, {responsive : true});
 	}
 	</script>
 	</body>
