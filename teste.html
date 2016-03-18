@@ -2,15 +2,21 @@
 	<head>
 		<title>Bar Chart</title>
 		<script src="Chart.js/Chart.js"></script>
-
+        <script src="teste.js"></script>
 	</head>
-	<body>
-
+	<body " onclick="ol();">
     <table><tr><td>
 			<div><canvas id="canvas" height="450" width="600"></canvas></div>
 </td><td>
 			<div><canvas id="canvas2" height="450" width="600"></canvas></div>
-</td></tr></table>
+</td>
+        <td>
+                
+
+        </td>
+        </tr></table>
+<h id="name"> Teste </h>
+
 
 
 	<script>
@@ -76,5 +82,6 @@
     window.myDoughnut = new Chart(ctx2).Doughnut(doughnutData, {responsive : true});
 	}
 	</script>
+        
 	</body>
 </html>
